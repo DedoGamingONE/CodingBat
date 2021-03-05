@@ -246,3 +246,71 @@ public int withoutDoubles(int die1, int die2, boolean noDoubles) {
    else
     return die1+die2;
 }
+/////// maxMod5 /////////////////////////////////////////////////////////////////////////////
+public int maxMod5(int a, int b) {
+  if (a == b)
+    return 0;
+    
+  if (a % 5 == b % 5)
+    return Math.min(a,b);
+  
+  return Math.max(a,b);
+}
+/////// redTicket /////////////////////////////////////////////////////////////////////////////
+public int redTicket(int a, int b, int c) {
+  if (a == 2 && b == 2 && c == 2)
+    return 10;
+  if ( a == b && b == c)
+    return 5;
+  if ( a != b && a != c)
+    return 1;
+  else
+    return 0;
+}
+/////// greenTicket ////////////////////////////////////////////////////////////////////////////
+public int greenTicket(int a, int b, int c) {
+  if (a == b && b == c)
+    return 20;
+  if (a == b || a == c || b == c)
+    return 10;
+  else;
+    return 0;
+}
+/////// blueTicket ////////////////////////////////////////////////////////////////////////////
+public int blueTicket(int a, int b, int c) {
+  int ab = a + b;
+  int bc = b + c;
+  int ac = a + c;
+  
+  if (ab == 10 || bc == 10 || ac == 10)
+    return 10;
+  if (ab - bc == 10 || ab - ac == 10)
+    return 5;
+  else
+    return 0;
+}
+/////// shareDigit ////////////////////////////////////////////////////////////////////////////
+public boolean shareDigit(int a, int b) {
+  int aL = a / 10;
+  int aR = a % 10;
+  int bL = b / 10;
+  int bR = b % 10;
+  
+  if (aL == bL || aL == bR || aR == bL || aR == bR)
+    return true;
+  else
+    return false;
+}
+/////// sumLimit ////////////////////////////////////////////////////////////////////////////
+public int sumLimit(int a, int b) {
+  String aString = String.valueOf(a);
+  int aLen = aString.length();
+  String sumString = String.valueOf(a+b);
+  int sumLen = sumString.length();
+  
+  if (sumLen == aLen)
+    return a + b;
+  else
+    return a;
+  
+}
